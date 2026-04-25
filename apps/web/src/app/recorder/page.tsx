@@ -14,7 +14,7 @@ import {
 import { LiveWaveform } from "@/components/ui/live-waveform"
 import { type ChunkEntry, useTranscription } from "@/hooks/use-transcription"
 
-const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL ?? "http://localhost:3000"
+const SERVER_URL = (process.env.NEXT_PUBLIC_SERVER_URL ?? "http://localhost:3000").replace(/\/+$/, "")
 
 function formatTime(seconds: number) {
   const m = Math.floor(seconds / 60)
